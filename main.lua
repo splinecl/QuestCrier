@@ -1,4 +1,4 @@
-print("Quest Crier");
+print("Quest Crier @project-version@");
 
 local debug = false;
 local isEnabled = true;
