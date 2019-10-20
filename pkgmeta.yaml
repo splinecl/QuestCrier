@@ -1,0 +1,3 @@
+package-as: QuestCryer
+enable-nolib-creation: no
+ignore: README.md
