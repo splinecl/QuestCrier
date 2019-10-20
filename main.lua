@@ -1,17 +1,17 @@
-print("Quest Cryer");
+print("Quest Crier");
 
 local debug = false;
 local isEnabled = true;
 local frame = CreateFrame("FRAME", "FooAddonFrame");
 frame:RegisterEvent("UI_INFO_MESSAGE");
 
-SLASH_QUEST_CRYER1 = "/qc"
-SlashCmdList["QUEST_CRYER"] = function(msg)
+SLASH_QUEST_CRIER1 = "/qc"
+SlashCmdList["QUEST_CRIER"] = function(msg)
     isEnabled = not isEnabled;
     if(isEnabled) then
-        print("Quest Cryer on");
+        print("Quest Crier on");
     else
-        print("Quest Cryer off"); 
+        print("Quest Crier off"); 
     end
 end 
 
@@ -24,8 +24,8 @@ function eventHandler(self, event, ...)
     --289 Picked up quest item
     if (event == "UI_INFO_MESSAGE") then
         if(debug) then
-            print("[QuestCryer arg1] " .. arg1);
-            print("[QuestCryer arg2] " .. arg2);
+            print("[QuestCrier arg1] " .. arg1);
+            print("[QuestCrier arg2] " .. arg2);
         end
 
         if(isEnabled and playerIsInParty and (arg1 == 287 or arg1 == 288 or arg1 == 289)) then

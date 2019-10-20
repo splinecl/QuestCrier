@@ -1,5 +1,5 @@
 ## Interface: 11302
-## Title: Quest Cryer
+## Title: Quest Crier
 ## Author: NiftyFace
 ## Version: 1.0
 
