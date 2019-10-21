@@ -1,34 +1,34 @@
-local isDebugEnabled = false;
+local isDebugEnabled = true;
 local frame = CreateFrame("FRAME", "QuestCrierAddonFrame");
 
 frame:RegisterEvent("UI_INFO_MESSAGE");
 frame:RegisterEvent("ADDON_LOADED");
-frame:SetScript("OnEvent", eventHandler);
 
 SLASH_QUEST_CRIER1 = "/qc"
 SlashCmdList["QUEST_CRIER"] = function(msg)
     isEnabled = not isEnabled;
     if(isEnabled) then
-        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier on");
+        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier on", 1.0, 1.0, 0.0);
     else
-        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier off");
+        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier off", 1.0, 1.0, 0.0);
     end
 end 
 
 function eventHandler(self, event, ...)
     local arg1, arg2 = ...;
-    local isPlayerInParty = UnitInParty("player");
 
-    if(event == "ADDON_LOADED") then
+    if(event == "ADDON_LOADED" and arg1 == "QuestCrier") then
          --We want to default to true if this is a first time load
         if(isEnabled == nil) then
             printDebug("First time load");
             isEnabled = true;
         end
-        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier @project-version@ toggle on/off using /qc, currently "..(isEnabled and 'on' or 'off'));
+        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier @project-version@ toggle on/off using /qc, currently "..(isEnabled and 'on' or 'off'), 1.0, 1.0, 0.0, true);
+        frame:UnregisterEvent("ADDON_LOADED");
     end
     
     if (event == "UI_INFO_MESSAGE") then
+        local isPlayerInParty = UnitInParty("player");
         printDebug("[QuestCrier arg1] " .. arg1);
         printDebug("[QuestCrier arg2] " .. arg2);
         
@@ -42,6 +42,8 @@ function eventHandler(self, event, ...)
         end
     end
 end
+
+frame:SetScript("OnEvent", eventHandler);
 
 function printDebug(message)
     if(isDebugEnabled) then
