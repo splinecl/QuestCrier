@@ -1,4 +1,4 @@
-local isDebugEnabled = true;
+local isDebugEnabled = false;
 local frame = CreateFrame("FRAME", "QuestCrierAddonFrame");
 
 frame:RegisterEvent("UI_INFO_MESSAGE");
