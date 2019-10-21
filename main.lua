@@ -13,11 +13,7 @@ SlashCmdList["QUEST_CRIER"] = function(msg)
         DEFAULT_CHAT_FRAME:AddMessage("Quest Crier throttle set to "..throttle, 1.0, 1.0, 0.0);
     else
         isEnabled = not isEnabled;
-        if(isEnabled) then
-            DEFAULT_CHAT_FRAME:AddMessage("Quest Crier on", 1.0, 1.0, 0.0);
-        else
-            DEFAULT_CHAT_FRAME:AddMessage("Quest Crier off", 1.0, 1.0, 0.0);
-        end
+        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier status:"..(isEnabled and 'on' or 'off').." throttle:"..throttle, 1.0, 1.0, 0.0);
     end
 end 
 
@@ -35,7 +31,7 @@ function eventHandler(self, event, ...)
             throttle = 1;
             printDebug("Initializing throttle to 1");
         end
-        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier @project-version@ toggle on/off using /qc, currently "..(isEnabled and 'on' or 'off').." throttle at "..throttle, 1.0, 1.0, 0.0, true);
+        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier @project-version@ toggle on/off using /qc, status:"..(isEnabled and 'on' or 'off').." throttle:"..throttle, 1.0, 1.0, 0.0, true);
         frame:UnregisterEvent("ADDON_LOADED");
     end
     
