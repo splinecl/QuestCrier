@@ -9,9 +9,9 @@ SLASH_QUEST_CRIER1 = "/qc"
 SlashCmdList["QUEST_CRIER"] = function(msg)
     isEnabled = not isEnabled;
     if(isEnabled) then
-        print("Quest Crier on");
+        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier on");
     else
-        print("Quest Crier off"); 
+        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier off");
     end
 end 
 
@@ -25,7 +25,7 @@ function eventHandler(self, event, ...)
             printDebug("First time load");
             isEnabled = true;
         end
-        print("Quest Crier @project-version@ toggle on/off using /qc, currently "..(isEnabled and 'on' or 'off'));
+        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier @project-version@ toggle on/off using /qc, currently "..(isEnabled and 'on' or 'off'));
     end
     
     if (event == "UI_INFO_MESSAGE") then
@@ -45,6 +45,6 @@ end
 
 function printDebug(message)
     if(isDebugEnabled) then
-        print(message);
+         DEFAULT_CHAT_FRAME:AddMessage(message);
     end
 end
