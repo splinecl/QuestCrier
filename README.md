@@ -10,6 +10,7 @@ This enables party members to easily track the progress of each others quests.
 ## Slash Commands
 
 Use `/qc` to toggle addon on/off
+
 Use `/qc <number>` to toggle throttling
 
 ### Throttling
