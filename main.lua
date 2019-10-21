@@ -24,6 +24,10 @@ function eventHandler(self, event, ...)
     --288 ?
     --289 Picked up quest item
     if (event == "UI_INFO_MESSAGE") then
+        --We want to default to true if this is a first time load
+        if(isEnabled == nil) then
+            isEnabled = true;
+        end
         if(debug) then
             print("[QuestCrier arg1] " .. arg1);
             print("[QuestCrier arg2] " .. arg2);
