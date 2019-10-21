@@ -9,7 +9,7 @@ This enables party members to easily track the progress of each others quests.
 
 ## Slash Commands
 
-Use /qc to toggle addon on/off
+Use `/qc` to toggle addon on/off
 
 ## CurseForge link
 https://www.curseforge.com/wow/addons/quest-crier
