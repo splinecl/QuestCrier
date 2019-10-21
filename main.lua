@@ -37,7 +37,7 @@ function eventHandler(self, event, ...)
         --287 Killed quest mob/Picked up quest item
         --288 ?
         --289 Picked up quest item
-        if(isEnabled and isPlayerInParty and (arg1 == 287 or arg1 == 288 or arg1 == 289)) then
+        if(isEnabled and isPlayerInParty and (arg1 == 285 or arg1 == 286 or arg1 == 287 or arg1 == 288 or arg1 == 289)) then
             SendChatMessage(arg2, "PARTY");
         end
     end
