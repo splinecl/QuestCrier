@@ -1,7 +1,6 @@
 print("Quest Crier @project-version@");
 
 local debug = false;
-local isEnabled = true;
 local frame = CreateFrame("FRAME", "QuestCrierAddonFrame");
 
 frame:RegisterEvent("UI_INFO_MESSAGE");
