@@ -25,7 +25,7 @@ function eventHandler(self, event, ...)
             printDebug("First time load");
             isEnabled = true;
         end
-        print("Quest Crier @project-version@ toggle on/off using /qc");
+        print("Quest Crier @project-version@ toggle on/off using /qc, currently "..(isEnabled and 'on' or 'off'));
     end
     
     if (event == "UI_INFO_MESSAGE") then
