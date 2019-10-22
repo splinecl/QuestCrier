@@ -11,7 +11,7 @@ SlashCmdList["QUEST_CRIER"] = function(msg)
     if(msgNumber ~= nil and msgNumber >= 0) then
         throttle = msgNumber;
         DEFAULT_CHAT_FRAME:AddMessage("Quest Crier throttle set to "..throttle, 1.0, 1.0, 0.0);
-    elseif msg == nil then
+    elseif msg ~= nil then
         isEnabled = not isEnabled;
         DEFAULT_CHAT_FRAME:AddMessage("Quest Crier status:"..(isEnabled and 'on' or 'off').." throttle:"..throttle, 1.0, 1.0, 0.0);
     else
@@ -57,6 +57,8 @@ frame:SetScript("OnEvent", eventHandler);
 
 function handleQuestMessage(message)
     local current, total = string.match(message, ": (%d+)/(%d+)");
+	current = tonumber(current);
+	total = tonumber(total);
     local activeThrottle = throttle;
     
     printDebug("[QuestCrier current] "..current);
