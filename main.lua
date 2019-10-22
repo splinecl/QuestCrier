@@ -8,7 +8,7 @@ SLASH_QUEST_CRIER1 = "/qc";
 SlashCmdList["QUEST_CRIER"] = function(msg)
     local msgNumber = tonumber(msg);
 
-    if(type(msgNumber) == 'number') then
+    if(type(msgNumber) == 'number' and msgNumber >= 0) then
         throttle = tonumber(msg);
         DEFAULT_CHAT_FRAME:AddMessage("Quest Crier throttle set to "..throttle, 1.0, 1.0, 0.0);
     else
@@ -63,7 +63,7 @@ function handleQuestMessage(message)
     
     if current and total then
         -- Calulate dynamic throttling, so that we send ~4 messages
-        if activeThrottle < 1 and total > 4 then
+        if activeThrottle == 0 and total > 4 then
             activeThrottle = math.ceil(total / 4);
             printDebug("[QuestCrier Calculated activeThrottle] "..activeThrottle);
         end
