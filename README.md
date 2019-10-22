@@ -13,6 +13,8 @@ Use `/qc` to toggle addon on/off
 
 Use `/qc <number>` to toggle throttling
 
+The on/off and throttling settings are all stored on a per account basis.
+
 ### Throttling
 If throttling is set to X, you will only see every X progress message. You will always see the last message no matter what throttling is set to.
 
