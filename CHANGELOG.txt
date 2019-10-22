@@ -1,4 +1,7 @@
 Changelog
+Quest Crier - v.1.5
+  - Better slash command argument handling
+  
 Quest Crier - v.1.4
   - Always show first quest progress message.
   - Throttle of 0 enables dynamic throttling.
