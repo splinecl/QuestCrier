@@ -11,9 +11,11 @@ SlashCmdList["QUEST_CRIER"] = function(msg)
     if(msgNumber ~= nil and msgNumber >= 0) then
         throttle = tonumber(msg);
         DEFAULT_CHAT_FRAME:AddMessage("Quest Crier throttle set to "..throttle, 1.0, 1.0, 0.0);
-    else
+    elseif msg == nil then
         isEnabled = not isEnabled;
         DEFAULT_CHAT_FRAME:AddMessage("Quest Crier status:"..(isEnabled and 'on' or 'off').." throttle:"..throttle, 1.0, 1.0, 0.0);
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier unknown argument: "..msg, 1.0, 1.0, 0.0);
     end
 end 
 
