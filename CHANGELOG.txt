@@ -1,3 +1,12 @@
 Changelog
 Quest Crier - v.1.3
   - Always show first quest progress message.
+
+Quest Crier - v.1.2
+  - Added throttling feature. This allows users to adjust the frequency of the messages.
+ 
+Quest Crier - v.1.1
+  - Disable debug flag. Was enabled by mistake.
+  
+Quest Crier - v.1.0
+  - Initial release.
