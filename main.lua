@@ -8,7 +8,7 @@ SLASH_QUEST_CRIER1 = "/qc";
 SlashCmdList["QUEST_CRIER"] = function(msg)
     local msgNumber = tonumber(msg);
 
-    if(type(msgNumber) == 'number' and msgNumber >= 0) then
+    if(msgNumber ~= nil and msgNumber >= 0) then
         throttle = tonumber(msg);
         DEFAULT_CHAT_FRAME:AddMessage("Quest Crier throttle set to "..throttle, 1.0, 1.0, 0.0);
     else
