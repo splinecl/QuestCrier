@@ -58,7 +58,7 @@ function handleQuestMessage(message)
     printDebug("total: "..total);
     printDebug("throttle: "..throttle);
     if(current and throttle) then
-        if((current % throttle) == 0 or current == total) then
+        if((current % throttle) == 0 or current == 1 or current == total) then
             SendChatMessage(message, "PARTY");
             printDebug("current % throttle "..message);
         end
