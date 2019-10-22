@@ -24,12 +24,12 @@ function eventHandler(self, event, ...)
          --We want to default to true if this is a first time load
         if(isEnabled == nil) then
             isEnabled = true;
-            printDebug("Initializing isEnalbed to true");
+            printDebug("[QuestCrier Initializing isEnalbed to true]");
         end
         --We want to default to 1 in throttle if this is a first time load
         if(throttle == nil) then
             throttle = 1;
-            printDebug("Initializing throttle to 1");
+            printDebug("[QuestCrier Initializing throttle to 1]");
         end
         DEFAULT_CHAT_FRAME:AddMessage("Quest Crier @project-version@ toggle on/off using /qc, status:"..(isEnabled and 'on' or 'off').." throttle:"..throttle, 1.0, 1.0, 0.0, true);
         frame:UnregisterEvent("ADDON_LOADED");
@@ -52,23 +52,23 @@ function eventHandler(self, event, ...)
     end
 end
 
+frame:SetScript("OnEvent", eventHandler);
+
 function handleQuestMessage(message)
     local current, total = string.match(message, ": (%d+)/(%d+)");
-    printDebug("current: "..current);
-    printDebug("total: "..total);
-    printDebug("throttle: "..throttle);
+    printDebug("[QuestCrier current] "..current);
+    printDebug("[QuestCrier total] "..total);
+    printDebug("[QuestCrier throttle] "..throttle);
     if(current and throttle) then
         if((current % throttle) == 0 or current == 1 or current == total) then
             SendChatMessage(message, "PARTY");
-            printDebug("current % throttle "..message);
+            printDebug("[QuestCrier Sending throttled message] "..message);
         end
     else
         SendChatMessage(message, "PARTY");
-        printDebug("NOT current and throttle "..message);
+        printDebug("[QuestCrier Sending normal message] "..message);
     end
 end
-
-frame:SetScript("OnEvent", eventHandler);
 
 function printDebug(message)
     if(isDebugEnabled) then
