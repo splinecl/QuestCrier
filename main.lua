@@ -20,22 +20,7 @@ end
 function eventHandler(self, event, ...)
     local arg1, arg2 = ...;
 
-    if(event == "ADDON_LOADED" and arg1 == "QuestCrier") then
-         --We want to default to true if this is a first time load
-        if(isEnabled == nil) then
-            isEnabled = true;
-            printDebug("[QuestCrier Initializing isEnalbed to true]");
-        end
-        --We want to default to 1 in throttle if this is a first time load
-        if(throttle == nil) then
-            throttle = 1;
-            printDebug("[QuestCrier Initializing throttle to 1]");
-        end
-        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier @project-version@ toggle on/off using /qc, status:"..(isEnabled and 'on' or 'off').." throttle:"..throttle, 1.0, 1.0, 0.0, true);
-        frame:UnregisterEvent("ADDON_LOADED");
-    end
-    
-    if (event == "UI_INFO_MESSAGE") then
+    if event == "UI_INFO_MESSAGE" then
         local isPlayerInParty = UnitInParty("player");
 
         printDebug("[QuestCrier arg1] " .. arg1);
@@ -49,7 +34,21 @@ function eventHandler(self, event, ...)
         if(isEnabled and isPlayerInParty and (arg1 == 285 or arg1 == 286 or arg1 == 287 or arg1 == 288 or arg1 == 289)) then
             handleQuestMessage(arg2);
         end
+    elseif event == "ADDON_LOADED" and arg1 == "QuestCrier" then
+         --We want to default to true if this is a first time load
+        if(isEnabled == nil) then
+            isEnabled = true;
+            printDebug("[QuestCrier Initializing isEnalbed to true]");
+        end
+        --We want to default to 1 in throttle if this is a first time load
+        if(throttle == nil) then
+            throttle = 1;
+            printDebug("[QuestCrier Initializing throttle to 1]");
+        end
+        DEFAULT_CHAT_FRAME:AddMessage("Quest Crier @project-version@ toggle on/off using /qc, status:"..(isEnabled and 'on' or 'off').." throttle:"..throttle, 1.0, 1.0, 0.0, true);
+        frame:UnregisterEvent("ADDON_LOADED");
     end
+
 end
 
 frame:SetScript("OnEvent", eventHandler);
