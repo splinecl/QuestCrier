@@ -2,6 +2,6 @@
 ## Title: Quest Crier
 ## Author: NiftyFace
 ## Version: @project-version@
-## SavedVariables: isEnabled throttle
+## SavedVariablesPerCharacter: isEnabled throttle
 
 main.lua
