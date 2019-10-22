@@ -55,11 +55,19 @@ frame:SetScript("OnEvent", eventHandler);
 
 function handleQuestMessage(message)
     local current, total = string.match(message, ": (%d+)/(%d+)");
+    local activeThrottle = throttle;
+    
     printDebug("[QuestCrier current] "..current);
     printDebug("[QuestCrier total] "..total);
-    printDebug("[QuestCrier throttle] "..throttle);
-    if(current and throttle) then
-        if((current % throttle) == 0 or current == 1 or current == total) then
+    printDebug("[QuestCrier activeThrottle] "..activeThrottle);
+    
+    if current and total and activeThrottle then
+        -- Calulate dynamic throttling, so that we send ~4 messages
+        if throttle == 0 and total > 4 then
+            activeThrottle = math.ceil(total / 4);
+        end
+        
+        if((current % activeThrottle) == 0 or current == 1 or current == total) then
             SendChatMessage(message, "PARTY");
             printDebug("[QuestCrier Sending throttled message] "..message);
         end
