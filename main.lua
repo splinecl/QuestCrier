@@ -63,7 +63,7 @@ function handleQuestMessage(message)
     
     if current and total then
         -- Calulate dynamic throttling, so that we send ~4 messages
-        if activeThrottle == 0 and total > 4 then
+        if activeThrottle < 1 and total > 4 then
             activeThrottle = math.ceil(total / 4);
             printDebug("[QuestCrier Calculated activeThrottle] "..activeThrottle);
         end
