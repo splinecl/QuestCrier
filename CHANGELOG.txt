@@ -1,0 +1,3 @@
+Changelog
+Quest Crier - v.1.3
+  - Always show first quest progress message.
