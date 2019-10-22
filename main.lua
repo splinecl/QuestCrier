@@ -9,7 +9,7 @@ SlashCmdList["QUEST_CRIER"] = function(msg)
     local msgNumber = tonumber(msg);
 
     if(msgNumber ~= nil and msgNumber >= 0) then
-        throttle = tonumber(msg);
+        throttle = msgNumber;
         DEFAULT_CHAT_FRAME:AddMessage("Quest Crier throttle set to "..throttle, 1.0, 1.0, 0.0);
     elseif msg == nil then
         isEnabled = not isEnabled;
