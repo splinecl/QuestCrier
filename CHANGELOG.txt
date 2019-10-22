@@ -1,6 +1,11 @@
 Changelog
-Quest Crier - v.1.3
+Quest Crier - v.1.4
   - Always show first quest progress message.
+  - Throttle of 0 enables dynamic throttling.
+  - Prevent throttle from being negative value.
+
+Quest Crier - v.1.3
+  - Some slightly better info messages
 
 Quest Crier - v.1.2
   - Added throttling feature. This allows users to adjust the frequency of the messages.
