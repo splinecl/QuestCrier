@@ -37,5 +37,10 @@ If throttle is set to 2 the quest "Bloodscalp Ears" would output the following.
     Bloodscalp Ear: 14/15
     Bloodscalp Ear: 15/15
 
+If throttle is set to 100 the quest "Bloodscalp Ears" would output the following.
+
+    Bloodscalp Ear: 1/15
+    Bloodscalp Ear: 15/15
+
 ## CurseForge link
 https://www.curseforge.com/wow/addons/quest-crier
