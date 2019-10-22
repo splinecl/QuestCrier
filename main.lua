@@ -72,6 +72,6 @@ end
 
 function printDebug(message)
     if(isDebugEnabled) then
-         DEFAULT_CHAT_FRAME:AddMessage(message);
+         DEFAULT_CHAT_FRAME:AddMessage(message, 1.0, 0.0, 0.0);
     end
 end
