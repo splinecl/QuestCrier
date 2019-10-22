@@ -11,7 +11,7 @@ This enables party members to easily track the progress of each others quests.
 
 Use `/qc` to toggle addon on/off
 
-Use `/qc <number>` to toggle throttling
+Use `/qc <number>` to change throttling
 
 The on/off and throttling settings are all stored on a per character basis.
 
