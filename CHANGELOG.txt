@@ -1,5 +1,6 @@
 Changelog
 Quest Crier - v.1.5
+  - Update interface number
   - Better slash command argument handling
   
 Quest Crier - v.1.4
