@@ -1,4 +1,7 @@
 Changelog
+Quest Crier - v.1.8
+  - Update interface number
+  
 Quest Crier - v.1.7
   - Fix problem with concatenation with nil value
   
