@@ -1,4 +1,7 @@
 Changelog
+Quest Crier - v.1.11
+  - Update classic and bcc interface numbers
+  
 Quest Crier - v.1.10
   - Update interface number
   
