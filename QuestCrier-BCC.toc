@@ -1,7 +1,0 @@
-## Interface: 20501
-## Title: Quest Crier
-## Author: NiftyFace
-## Version: @project-version@
-## SavedVariablesPerCharacter: isEnabled throttle
-
-main.lua
