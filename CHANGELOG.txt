@@ -1,4 +1,7 @@
 Changelog
+Quest Crier - v.1.17
+  - Addon version for Classic and BCC
+
 Quest Crier - v.1.13
   - Add base toc
   
