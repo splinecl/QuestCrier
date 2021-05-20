@@ -1,4 +1,7 @@
 Changelog
+Quest Crier - v.1.13
+  - Add base toc
+  
 Quest Crier - v.1.12
   - Add distinct classic and bcc tocs
 
