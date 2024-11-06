@@ -1,6 +1,6 @@
 ## X-Curse-Project-ID: 348615
-## Interface: 11307
-## Interface-Classic: 11307
+## Interface: 11504
+## Interface-Classic: 11504
 ## Interface-BCC: 20501
 ## Title: Quest Crier
 ## Author: NiftyFace
