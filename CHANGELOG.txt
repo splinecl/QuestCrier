@@ -1,4 +1,7 @@
 Changelog
+Quest Crier - v.1.19
+  - Update interface number for Classic
+
 Quest Crier - v.1.18
   - Addon version for Classic and BCC
 
