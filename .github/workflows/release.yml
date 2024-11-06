@@ -39,14 +39,14 @@ jobs:
 
       # another example where we supply additional arguments, this example is specifically to release
       # for the Classic version of the game
-      - name: Package and release for Classic
-        uses: BigWigsMods/packager@v2
+      - name: WoW Packager Classic
+        uses: BigWigsMods/packager@v2.3.1
         with:
           args: -g classic -w 0
           
                 # another example where we supply additional arguments, this example is specifically to release
       # for the Classic version of the game
-      #- name: Package and release for BCC
-      #  uses: BigWigsMods/packager@v2
+      #- name: WoW Packager BCC
+      #  uses: BigWigsMods/packager@v2.3.1
       #  with:
       #    args: -g bcc -w 0
